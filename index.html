@@ -1,24 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title> Felipe Kimura </title>
-        <link rel="icon" href="assets/img/Icone.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/reset.css">
-    </head>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KimuraBR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="flex justify-between items-center px-8 py-4 bg-white shadow-md sticky top-0 z-50">
+      <h1 class="text-2xl font-bold text-blue-600">KimuraBR</h1>
+      <nav class="hidden md:flex gap-6">
+        <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
+        <a href="#projetos" class="hover:text-blue-600 transition">Projetos</a>
+        <a href="#contato" class="hover:text-blue-600 transition">Contato</a>
+      </nav>
+      <a
+        href="https://wa.me/5551998300582"
+        target="_blank"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+      >
+        Fale comigo
+      </a>
+    </header>
 
-    <body>
-        <header>
-            <img src="assets/img/LOGO.png" alt="Logo Kmra">
-            <nav>
-                <a href="">Home</a>
-                <a href="">Projetos</a>
-                <a href="">Skills</a>
-                <a href="">Contato</a>
-                <a href="">Sobre</a>
-            </nav>
-        </header>
-    </body>
+    <section
+      class="min-h-[80vh] flex flex-col items-center justify-center text-center bg-gradient-to-b from-blue-50 to-white px-6"
+    >
+      <img
+        src="https://avatars.githubusercontent.com/u/placeholder?v=4"
+        alt="Foto Felipe"
+        class="w-32 h-32 rounded-full shadow-md mb-6"
+      />
+      <h2 class="text-4xl md:text-5xl font-bold mb-2">Olá, eu sou <span class="text-blue-600">Felipe Kimura</span></h2>
+      <p class="text-lg text-gray-600 max-w-2xl mb-6">
+        Desenvolvedor apaixonado por tecnologia e criação digital. Transformo ideias em projetos reais e experiências únicas.
+      </p>
+      <div class="flex gap-4">
+        <a href="#projetos" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Ver Projetos</a>
+        <a
+          href="https://wa.me/5551998300582"
+          target="_blank"
+          class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-20 bg-white px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-4 text-blue-600">Sobre mim</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Sou um desenvolvedor focado em criar soluções práticas e elegantes. Tenho experiência com HTML, CSS, JavaScript e bancos de dados,
+          e estou sempre explorando novas tecnologias para melhorar meus projetos.
+        </p>
+        <a
+          href="#contato"
+          class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+        >
+          Entre em contato
+        </a>
+      </div>
+    </section>
+
+    <section id="projetos" class="py-20 bg-gray-50 px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-10 text-blue-600">Projetos</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+            <img src="https://placehold.co/600x400" alt="Projeto 1" class="rounded-lg mb-4" />
+            <h4 class="font-semibold text-lg mb-2">Projeto 1</h4>
+            <p class="text-gray-600 text-sm mb-3">
+              Um projeto de exemplo com foco em design limpo e funcionalidade.
+            </p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+            <img src="https://placehold.co/600x400" alt="Projeto 2" class="rounded-lg mb-4" />
+            <h4 class="font-semibold text-lg mb-2">Projeto 2</h4>
+            <p class="text-gray-600 text-sm mb-3">
+              Aplicação desenvolvida para demonstrar integração com APIs.
+            </p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+            <img src="https://placehold.co/600x400" alt="Projeto 3" class="rounded-lg mb-4" />
+            <h4 class="font-semibold text-lg mb-2">Projeto 3</h4>
+            <p class="text-gray-600 text-sm mb-3">
+              Website estático criado com foco em performance e SEO.
+            </p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 bg-white px-8 text-center">
+      <h3 class="text-3xl font-semibold mb-4 text-blue-600">Entre em contato</h3>
+      <p class="text-gray-600 mb-8">
+        Vamos conversar sobre seu próximo projeto? Estou sempre aberto a novas ideias!
+      </p>
+      <a
+        href="https://wa.me/5551998300582"
+        target="_blank"
+        class="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition"
+      >
+        💬 Falar no WhatsApp
+      </a>
+      <div class="mt-8 flex justify-center gap-6 text-2xl text-gray-600">
+        <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+      <p>© 2025 Felipe Kimura. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a2e0d1f65b.js" crossorigin="anonymous"></script>
+  </body>
 </html>
