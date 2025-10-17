@@ -1,27 +1,61 @@
-body {
-    background-color: whitesmoke
+/* KimuraBR*/
+
+:root{
+  --primary: #1e40af; 
+  --muted: #4b5563;
+  --bg: #f8fafc;
 }
 
-header {
-    display: flex;
-    background-color: rgb(14, 40, 97);
+body{
+  background: var(--bg);
+  color: #1f2937;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
 }
 
-img {
-    padding: 5px 30px;
+header{
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(2,6,23,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-a {
-    display: inline-flex;
-    align-items: center;
-    font-size: 25px;
-    font-family: 'Unbounded', cursive;
-    font-weight: 200;
-    text-decoration: none;
-    text-shadow: 4px 7px 15px rgb(0, 0, 0);
-    padding: 50px 20px;
-    padding-left: 40px;
-    margin-right: 25px;
-    color: rgb(230, 230, 230)
+section.min-h-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #eff6ff 0%, #ffffff 100%);
 }
 
+img[alt="Foto Felipe"]{
+  width: 128px;
+  height: 128px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+section#projetos .card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.04);
+  padding: 1.25rem;
+}
+
+footer{
+  background: #0f172a;
+  color: #9ca3af;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 768px){
+  .nav-md { display: flex; gap: 1.5rem; }
+  .grid-md-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+}
