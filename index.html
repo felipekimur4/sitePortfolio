@@ -5,29 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controle de Estoque</title>
   <style>
-    body { font-family: Arial; background: #f3f3f3; padding: 20px; }
-    h1 { text-align: center; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
-    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
-    form { display: flex; gap: 10px; margin-top: 20px; }
-    input, button { padding: 10px; font-size: 14px; }
-    button { background: #007BFF; color: white; border: none; cursor: pointer; }
-    button:hover { background: #0056b3; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2b5876;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    input, button {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background-color: #2b5876;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: #4e4376;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #2b5876;
+      color: white;
+    }
   </style>
 </head>
 <body>
   <h1>📦 Controle de Estoque</h1>
 
   <form id="form">
-    <input type="text" id="produto" placeholder="Produto" required>
-    <input type="number" id="quantidade" placeholder="Quantidade" required>
-    <input type="number" step="0.01" id="preco" placeholder="Preço" required>
+    <input type="text" id="modelo" placeholder="Modelo" required>
+    <input type="text" id="sabor" placeholder="Sabor" required>
+    <input type="number" step="0.01" id="venda" placeholder="Venda (R$)" required>
+    <input type="number" step="0.01" id="custo" placeholder="Custo (R$)" required>
     <button type="submit">Adicionar</button>
   </form>
 
   <table>
     <thead>
-      <tr><th>ID</th><th>Produto</th><th>Qtd</th><th>Preço</th><th>Data</th><th>Ações</th></tr>
+      <tr>
+        <th>Modelo</th>
+        <th>Sabor</th>
+        <th>Venda (R$)</th>
+        <th>Custo (R$)</th>
+        <th>Última Atualização</th>
+      </tr>
     </thead>
     <tbody id="tabela"></tbody>
   </table>
@@ -35,49 +80,49 @@
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbzqfZA7EgyUCxUrcNn-HpOwq0NV_AB4ZleHJnlq99HiBm8mPDCGbh7Bt0Sa_lluvK0O/exec";
 
-    async function carregar() {
+    async function carregarEstoque() {
       const res = await fetch(API_URL);
       const data = await res.json();
+
       const tabela = document.getElementById("tabela");
       tabela.innerHTML = "";
+
       data.forEach(item => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td>${item.ID}</td>
-          <td>${item.Produto}</td>
-          <td>${item.Quantidade}</td>
-          <td>${item.Preço}</td>
-          <td>${item["Última Atualização"]}</td>
-          <td><button onclick="remover(${item.ID})">❌</button></td>
+          <td>${item["Modelo"]}</td>
+          <td>${item["Sabor"]}</td>
+          <td>${item["Venda"]}</td>
+          <td>${item["Custo"]}</td>
+          <td>${item["Última atualização"]}</td>
         `;
         tabela.appendChild(tr);
       });
     }
 
-    async function remover(id) {
-      await fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify({ action: "delete", id }),
-      });
-      carregar();
-    }
-
     document.getElementById("form").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const produto = produto.value;
-      const quantidade = quantidade.value;
-      const preco = preco.value;
+      const modelo = document.getElementById("modelo").value;
+      const sabor = document.getElementById("sabor").value;
+      const venda = document.getElementById("venda").value;
+      const custo = document.getElementById("custo").value;
+
       await fetch(API_URL, {
         method: "POST",
-        body: JSON.stringify({ action: "add", produto, quantidade, preco }),
+        body: JSON.stringify({
+          action: "add",
+          modelo,
+          sabor,
+          venda,
+          custo
+        }),
       });
+
       e.target.reset();
-      carregar();
+      carregarEstoque();
     });
 
-    carregar();
+    carregarEstoque();
   </script>
 </body>
 </html>
-
-
