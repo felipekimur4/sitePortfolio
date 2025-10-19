@@ -1,120 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KimuraBR</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header class="flex justify-between items-center px-8 py-4 bg-white shadow-md sticky top-0 z-50">
-      <h1 class="text-2xl font-bold text-blue-600">KimuraBR</h1>
-      <nav class="hidden md:flex gap-6">
-        <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
-        <a href="#projetos" class="hover:text-blue-600 transition">Projetos</a>
-        <a href="#contato" class="hover:text-blue-600 transition">Contato</a>
-      </nav>
-      <a
-        href="https://wa.me/5551998300582"
-        target="_blank"
-        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-      >
-        Fale comigo
-      </a>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Estoque</title>
+  <style>
+    body { font-family: Arial; background: #f3f3f3; padding: 20px; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    form { display: flex; gap: 10px; margin-top: 20px; }
+    input, button { padding: 10px; font-size: 14px; }
+    button { background: #007BFF; color: white; border: none; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <h1>📦 Controle de Estoque</h1>
 
-    <section
-      class="min-h-[80vh] flex flex-col items-center justify-center text-center bg-gradient-to-b from-blue-50 to-white px-6"
-    >
-      <h2 class="text-4xl md:text-5xl font-bold mb-2">Olá, eu sou <span class="text-blue-600">Felipe Kimura</span></h2>
-      <p class="text-lg text-gray-600 max-w-2xl mb-6">
-        Desenvolvedor apaixonado por tecnologia e criação digital. Transformo ideias em projetos reais e experiências únicas.
-      </p>
-      <div class="flex gap-4">
-        <a href="#projetos" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Ver Projetos</a>
-        <a
-          href="https://wa.me/5551998300582"
-          target="_blank"
-          class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition"
-        >
-          WhatsApp
-        </a>
-      </div>
-    </section>
+  <form id="form">
+    <input type="text" id="produto" placeholder="Produto" required>
+    <input type="number" id="quantidade" placeholder="Quantidade" required>
+    <input type="number" step="0.01" id="preco" placeholder="Preço" required>
+    <button type="submit">Adicionar</button>
+  </form>
 
-    <section id="sobre" class="py-20 bg-white px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-4 text-blue-600">Sobre mim</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Sou um desenvolvedor focado em criar soluções práticas e elegantes. Tenho experiência com HTML, CSS, JavaScript e bancos de dados,
-          e estou sempre explorando novas tecnologias para melhorar meus projetos.
-        </p>
-        <a
-          href="#contato"
-          class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-        >
-          Entre em contato
-        </a>
-      </div>
-    </section>
-    <!---
-    <section id="projetos" class="py-20 bg-gray-50 px-8">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-10 text-blue-600">Projetos</h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
-            <img src="https://placehold.co/600x400" alt="Projeto 1" class="rounded-lg mb-4" />
-            <h4 class="font-semibold text-lg mb-2">Projeto 1</h4>
-            <p class="text-gray-600 text-sm mb-3">
-              Um projeto de exemplo com foco em design limpo e funcionalidade.
-            </p>
-            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
-          </div>
-          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
-            <img src="https://placehold.co/600x400" alt="Projeto 2" class="rounded-lg mb-4" />
-            <h4 class="font-semibold text-lg mb-2">Projeto 2</h4>
-            <p class="text-gray-600 text-sm mb-3">
-              Aplicação desenvolvida para demonstrar integração com APIs.
-            </p>
-            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
-          </div>
-          <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
-            <img src="https://placehold.co/600x400" alt="Projeto 3" class="rounded-lg mb-4" />
-            <h4 class="font-semibold text-lg mb-2">Projeto 3</h4>
-            <p class="text-gray-600 text-sm mb-3">
-              Website estático criado com foco em performance e SEO.
-            </p>
-            <a href="#" class="text-blue-600 font-medium hover:underline">Ver mais →</a>
-          </div>
-        </div>
-      </div>
-    </section>
--->
-    <section id="contato" class="py-20 bg-white px-8 text-center">
-      <h3 class="text-3xl font-semibold mb-4 text-blue-600">Entre em contato</h3>
-      <p class="text-gray-600 mb-8">
-        Vamos conversar sobre seu próximo projeto? Estou sempre aberto a novas ideias!
-      </p>
-      <a
-        href="https://wa.me/5551998300582"
-        target="_blank"
-        class="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition"
-      >
-        💬 Falar no WhatsApp
-      </a>
-      <div class="mt-8 flex justify-center gap-6 text-2xl text-gray-600">
-        <a href="https://github.com/felipekimur4" class="hover:text-blue-600 transition"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/felipekimura/" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.instagram.com/ofelipekimura/" class="hover:text-blue-600 transition"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-    </section>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Produto</th><th>Qtd</th><th>Preço</th><th>Data</th><th>Ações</th></tr>
+    </thead>
+    <tbody id="tabela"></tbody>
+  </table>
 
-    <footer class="bg-gray-900 text-gray-400 text-center py-6">
-      <p>© 2025 Felipe Kimura. Todos os direitos reservados.</p>
-    </footer>
+  <script>
+    const API_URL = "SUA_URL_DA_API_AQUI"; // substitua pela URL do Apps Script
 
-    <script src="https://kit.fontawesome.com/a2e0d1f65b.js" crossorigin="anonymous"></script>
-  </body>
+    async function carregar() {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      const tabela = document.getElementById("tabela");
+      tabela.innerHTML = "";
+      data.forEach(item => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${item.ID}</td>
+          <td>${item.Produto}</td>
+          <td>${item.Quantidade}</td>
+          <td>${item.Preço}</td>
+          <td>${item["Última Atualização"]}</td>
+          <td><button onclick="remover(${item.ID})">❌</button></td>
+        `;
+        tabela.appendChild(tr);
+      });
+    }
+
+    async function remover(id) {
+      await fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({ action: "delete", id }),
+      });
+      carregar();
+    }
+
+    document.getElementById("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const produto = produto.value;
+      const quantidade = quantidade.value;
+      const preco = preco.value;
+      await fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({ action: "add", produto, quantidade, preco }),
+      });
+      e.target.reset();
+      carregar();
+    });
+
+    carregar();
+  </script>
+</body>
 </html>
-
